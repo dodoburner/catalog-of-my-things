@@ -1,6 +1,6 @@
 require './item'
 class Music < Item
- attr_accessor :on_spotify
+  attr_accessor :on_spotify
 
   def initialize(on_spotify)
     super(publish_date: Date.today.to_s)
@@ -10,6 +10,6 @@ class Music < Item
   private
 
   def can_be_archived?
-   return true if super && @on_spotify
+    return true if super && @on_spotify
   end
 end
