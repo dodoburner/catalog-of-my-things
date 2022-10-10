@@ -2,28 +2,28 @@ class Item
   attr_accessor :publish_date, :genre, :author, :label
   attr_reader :id, :archived
 
-  def initialize()
+  def initialize(publish_date)
     @id = Random.rand(1..1000)
-    @publish_date = Data.parse(publish_date)
+    @publish_date = Date.parse(publish_date)
     @archived = false
   end
 
-  def set_genre(genre)
+  def add_genre(genre)
     genre.items << self unless genre.items.include? self
     @genre = genre
   end
 
-  def set_author(author)
+  def add_author(author)
     author.items << self unless author.items.include? self
     @author = author
   end
 
-  def set_source(source)
+  def add_source(source)
     source.items << self unless source.items.include? self
     @source = source
   end
 
-  def set_label(label)
+  def add_label(label)
     label.items << self unless label.items.include? self
     @label = label
   end
