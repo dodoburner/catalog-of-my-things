@@ -8,17 +8,17 @@ class Item
     @archived = false
   end
 
-  def add_genre(genre)
+  def set_genre(genre)
     genre.items << self unless genre.items.include? self
     @genre = genre
   end
 
-  def add_author(author)
+  def set_author(author)
     author.items << self unless author.items.include? self
     @author = author
   end
 
-  def add_source(source)
+  def set_source(source)
     source.items << self unless source.items.include? self
     @source = source
   end
