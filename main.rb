@@ -1,7 +1,5 @@
-class Main
-  def initialize
-  end
-
+def main
+  puts 'Welcome to Catalog of my things App!'
   def list_holder(option)
     case option
     when 
@@ -42,3 +40,5 @@ class Main
     puts '0 - Exit'
   end
 end
+
+main
