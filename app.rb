@@ -132,7 +132,7 @@ class App
 
   # ======== list all genre ==========
 
-  def list_all_genre
+  def list_all_genres
     genres = File.size('./genres.json').zero? ? [] : JSON.parse(File.read('./genres.json'))
     genres.each do |g|
       puts "Name: #{g['name']}"
@@ -140,8 +140,8 @@ class App
   end
 
   # ======== list all music ==========
-  
-  def list_all_music
+
+  def list_all_musics
     musics = File.size('./musics.json').zero? ? [] : JSON.parse(File.read('./musics.json'))
     musics.each do |m|
       puts "On Spotify: #{m['on_spotify']}"
