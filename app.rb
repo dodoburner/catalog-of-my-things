@@ -2,7 +2,10 @@ require './book'
 
 class App
   def list_all_books
-    File.foreach('./books.json') { |b| puts "archived: #{b['archived']}" }
+    books = File.size('./books.json').zero? ? [] : JSON.parse(File.read('./books.json'))
+    books.each do |b|
+      puts "Publisher: #{b['publisher']}, Cover State: #{b['cover_state']}, Publish Date: #{b['publish_date']}"
+    end
   end
 
   def add_a_book
@@ -22,8 +25,8 @@ class App
       publish_date: book.publish_date,
       author_id: book.author ? book.author.id : nil
     }
-    file = File.size('./books.json').zero? ? [] : JSON.parse(File.read('./books.json'))
 
+    file = File.size('./books.json').zero? ? [] : JSON.parse(File.read('./books.json'))
     file << hash
     File.write('books.json', file.to_json)
   end
