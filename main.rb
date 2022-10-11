@@ -7,6 +7,8 @@ def main
   case option
   when 1
     app.list_all_books
+  when 5
+    app.list_all_labels
   when 9
     app.add_a_book
   end
@@ -17,6 +19,7 @@ end
 def display_list
   puts "Please choose an option by entering a number from below:\n"
   puts '1 - List all books'
+  puts '5 - List all labels'
   puts '9 - Add a book'
   puts '0 - Exit'
   gets.to_i

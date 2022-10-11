@@ -17,7 +17,7 @@ class App
     hash = {
       id: label.id,
       title: label.title,
-      color: label.color,
+      color: label.color
     }
 
     file = File.size('./labels.json').zero? ? [] : JSON.parse(File.read('./labels.json'))
@@ -53,7 +53,6 @@ class App
     File.write('books.json', file.to_json)
   end
 
-
   def list_all_books
     books = File.size('./books.json').zero? ? [] : JSON.parse(File.read('./books.json'))
     books.each do |b|
@@ -61,5 +60,10 @@ class App
     end
   end
 
-
+  def list_all_labels
+    labels = File.size('./labels.json').zero? ? [] : JSON.parse(File.read('./labels.json'))
+    labels.each do |l|
+      puts "Title: #{l['title']}, Color: #{l['color']}"
+    end
+  end
 end
