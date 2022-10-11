@@ -1,9 +1,11 @@
 require './item'
+require 'json'
+
 class Music < Item
   attr_accessor :on_spotify
 
-  def initialize(on_spotify)
-    super(publish_date: Date.today.to_s)
+  def initialize(on_spotify, publish_date)
+    super(publish_date)
     @on_spotify = on_spotify
   end
 
