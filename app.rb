@@ -122,7 +122,8 @@ class App
     hash = {
       id: music.id,
       on_spotify: music.on_spotify,
-      genre_id: music.genre.id
+      genre_id: music.genre.id,
+      publish_date: music.publish_date
     }
 
     file = File.size('./musics.json').zero? ? [] : JSON.parse(File.read('./musics.json'))
