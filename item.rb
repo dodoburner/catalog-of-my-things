@@ -18,11 +18,6 @@ class Item
     @author = author
   end
 
-  def add_source(source)
-    source.items << self unless source.items.include? self
-    @source = source
-  end
-
   def add_label(label)
     label.items << self unless label.items.include? self
     @label = label
@@ -32,7 +27,9 @@ class Item
     @archived = true if can_be_archived?
   end
 
+  private
+
   def can_be_archived?
-    true if (Date.today.to_time.year - @publish_date.to_time.year) > 10
+    true if (DateTime.now - @publish_date).to_i / 365 > 10
   end
 end
