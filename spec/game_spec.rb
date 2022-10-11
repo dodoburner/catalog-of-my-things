@@ -3,7 +3,7 @@ require 'date'
 
 describe Game do
   before :each do
-    @game = Game.new(true, '2022-10-10', '1998-10-11')
+    @game = Game.new(true, '2000-10-10', '1998-10-11')
   end
   context 'create an instance of game with game object' do
     it 'takes three parameters and return a Game object' do

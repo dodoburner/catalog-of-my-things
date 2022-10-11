@@ -3,7 +3,7 @@ require_relative '../author'
 
 describe Author do
   before :all do
-    @game = Game.new(true, '2022-10-10', '1998-10-11')
+    @game = Game.new(true, '2000-10-10', '1998-10-11')
     @author = Author.new('Alfred', 'Kinyua', '2022-10-10')
   end
   context 'create instance of class Author' do
