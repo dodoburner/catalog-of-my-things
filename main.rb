@@ -14,7 +14,7 @@ def main
   when 5
     app.list_all_labels
   when 8
-     app.add_a_music
+    app.add_a_music
   when 9
     app.add_a_book
   end

@@ -11,7 +11,6 @@ class App
     title = gets.chomp
     print 'Label color: '
     color = gets.chomp
-
     label = Label.new(title, color)
     label.add_item(item)
     store_label(label)
@@ -40,9 +39,9 @@ class App
     cover_state = gets.chomp
     print 'Publish date: '
     publish_date = gets.chomp
-
     book = Book.new(publisher, cover_state, publish_date)
     add_label(book)
+    puts 'Book and label were added successfully!'
     store_book(book)
   end
 
@@ -106,14 +105,15 @@ class App
   end
 
   # ======== Add music ==========
-
   def add_a_music
-   print 'Is it on spotify? [Yes/No]: '
-   on_spotify = gets.chomp
-   music = Music.new(on_spotify: on_spotify)
-   add_genre(music)
-   puts 'Music created successfully !!!'
-   store_music(music)
+    print 'On Spotify (true or false): '
+    on_spotify = gets.chomp
+    print 'Publish date: '
+    publish_date = gets.chomp
+    music = Music.new(on_spotify, publish_date)
+    add_genre(music)
+    puts 'Music and Genre were added successfully!'
+    store_music(music)
   end
 
   # ======== store music ==========
@@ -147,5 +147,4 @@ class App
       puts "On Spotify: #{m['on_spotify']}"
     end
   end
-  
 end
