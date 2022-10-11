@@ -1,7 +1,11 @@
+require 'json'
 require './book'
 require './label'
+require './music'
+require './genre'
 
 class App
+  # ======== Add labels ==========
   def add_label(item)
     print 'Label title: '
     title = gets.chomp
@@ -12,6 +16,8 @@ class App
     label.add_item(item)
     store_label(label)
   end
+
+  # ======== store labels ==========
 
   def store_label(label)
     hash = {
@@ -25,6 +31,8 @@ class App
     File.write('labels.json', file.to_json)
   end
 
+  # ======== Add books ==========
+
   def add_a_book
     print 'Publisher: '
     publisher = gets.chomp
@@ -37,6 +45,8 @@ class App
     add_label(book)
     store_book(book)
   end
+
+  # ======== store books ==========
 
   def store_book(book)
     hash = {
@@ -53,6 +63,8 @@ class App
     File.write('books.json', file.to_json)
   end
 
+  # ======== list all books ==========
+
   def list_all_books
     books = File.size('./books.json').zero? ? [] : JSON.parse(File.read('./books.json'))
     books.each do |b|
@@ -60,10 +72,80 @@ class App
     end
   end
 
+  # ======== list all labels ==========
+
   def list_all_labels
     labels = File.size('./labels.json').zero? ? [] : JSON.parse(File.read('./labels.json'))
     labels.each do |l|
       puts "Title: #{l['title']}, Color: #{l['color']}"
     end
   end
+
+  # ======== Add genre ==========
+
+  def add_genre(item)
+    print 'Genre name: '
+    name = gets.chomp
+
+    genre = Genre.new(name)
+    genre.add_item(item)
+    store_genre(genre)
+  end
+
+  # ======== store genre ==========
+
+  def store_genre(genre)
+    hash = {
+      id: genre.id,
+      name: genre.name
+    }
+
+    file = File.size('./genres.json').zero? ? [] : JSON.parse(File.read('./genres.json'))
+    file << hash
+    File.write('genres.json', file.to_json)
+  end
+
+  # ======== Add music ==========
+
+  def add_a_music
+   print 'Is it on spotify? [Yes/No]: '
+   on_spotify = gets.chomp
+   music = Music.new(on_spotify: on_spotify)
+   add_genre(music)
+   puts 'Music created successfully !!!'
+   store_music(music)
+  end
+
+  # ======== store music ==========
+
+  def store_music(music)
+    hash = {
+      id: music.id,
+      on_spotify: music.on_spotify,
+      genre_id: music.genre.id
+    }
+
+    file = File.size('./musics.json').zero? ? [] : JSON.parse(File.read('./musics.json'))
+    file << hash
+    File.write('musics.json', file.to_json)
+  end
+
+  # ======== list all genre ==========
+
+  def list_all_genre
+    genres = File.size('./genres.json').zero? ? [] : JSON.parse(File.read('./genres.json'))
+    genres.each do |g|
+      puts "Name: #{g['name']}"
+    end
+  end
+
+  # ======== list all music ==========
+  
+  def list_all_music
+    musics = File.size('./musics.json').zero? ? [] : JSON.parse(File.read('./musics.json'))
+    musics.each do |m|
+      puts "On Spotify: #{m['on_spotify']}"
+    end
+  end
+  
 end
