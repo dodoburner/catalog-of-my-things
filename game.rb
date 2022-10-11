@@ -8,9 +8,6 @@ class Game < Item
   end
 
   def can_be_archived?
-    current_year = Time.now.year
-    seniority = current_year - @last_played_at_date.year
-
-    true if super && (Date.today.to_time.year - last_played_at_date) > 2
+    true if super && (Date.today.to_time.year - last_played_at_date.year) > 2
   end
 end
