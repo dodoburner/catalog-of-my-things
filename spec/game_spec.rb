@@ -1,5 +1,5 @@
-require_relative '../game'
 require 'date'
+require_relative('spec_helper')
 
 describe Game do
   before :each do
