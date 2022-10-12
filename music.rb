@@ -7,6 +7,7 @@ class Music < Item
   def initialize(on_spotify, publish_date)
     super(publish_date)
     @on_spotify = on_spotify
+    move_to_archive
   end
 
   private
