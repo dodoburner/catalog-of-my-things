@@ -7,7 +7,7 @@ describe Label do
     @label.add_item(@item)
   end
 
-  it "initializes an instance of the class" do
+  it 'initializes an instance of the class' do
     label = Label.new('new', 'red')
     expect(label).to be_instance_of Label
   end

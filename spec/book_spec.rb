@@ -6,7 +6,7 @@ describe Book do
     @book2 = Book.new('jk rowling', 'good', '22-05-2018')
   end
 
-  it "initializes an instance of the class" do
+  it 'initializes an instance of the class' do
     expect(@book1).to be_instance_of Book
   end
 
