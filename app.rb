@@ -122,6 +122,7 @@ class App
     hash = {
       id: music.id,
       on_spotify: music.on_spotify,
+      archived: music.archived,
       genre_id: music.genre.id,
       publish_date: music.publish_date
     }
