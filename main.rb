@@ -21,18 +21,15 @@ def list_items(app, option)
     app.list_all_genres
   when 5
     app.list_all_labels
-
   when 6
     app.list_all_authors
-  when 7
-    app.add_game
-
   end
 end
 
 def add_items(app, option)
   case option
-
+  when 7
+    app.add_game
   when 8
     app.add_a_music
   when 9

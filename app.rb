@@ -64,9 +64,7 @@ class App
     first_name = gets.chomp
     puts 'Enter last name'
     last_name = gets.chomp
-    puts 'enter publish date using (yyyy-mm-dd) format: '
-    publish_date = gets.chomp
-    new_author = Author.new(first_name, last_name, publish_date)
+    new_author = Author.new(first_name, last_name)
     new_author.add_item(item)
     store_author(new_author)
   end
@@ -77,7 +75,6 @@ class App
       id: new_author.id,
       first_name: new_author.first_name,
       last_name: new_author.last_name,
-      publish_date: new_author.publish_date
     }
 
     file = File.size('./author.json').zero? ? [] : JSON.parse(File.read('./author.json'))
@@ -201,7 +198,7 @@ class App
   def list_all_musics
     musics = File.size('./musics.json').zero? ? [] : JSON.parse(File.read('./musics.json'))
     musics.each do |m|
-      puts "On Spotify: #{m['on_spotify']}"
+      puts "On Spotify: #{m['on_spotify']}, Publish Date: #{m['publish_date']}"
     end
   end
   # ======== list all games ==========
