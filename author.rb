@@ -12,8 +12,8 @@ class Author < Item
     @items = []
   end
 
-  def add_author(book)
-    @items << (book)
-    book.author = self
+  def add_item(item)
+    item.author = self
+    @items << item
   end
 end
