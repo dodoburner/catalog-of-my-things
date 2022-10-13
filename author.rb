@@ -1,8 +1,8 @@
 require './item'
 
 class Author
-  attr_accessor :first_name, :last_name, :items
-  attr_reader :id
+  attr_accessor :first_name, :last_name
+  attr_reader :id, :items
 
   def initialize(first_name, last_name)
     @id = Random.rand(0..1000)
@@ -12,7 +12,7 @@ class Author
   end
 
   def add_item(item)
-    item.author = self
     @items << item
+    item.add_author(self)
   end
 end
