@@ -21,7 +21,7 @@ Catalog of my things
 
 ## Link to the video explanation
 
-[Video Link](https://www.loom.com/share/944f66c3ecc34fd88b3f1ad09c82bd7d)
+[Video Link](https://drive.google.com/file/d/1jpcTOnGem-HzWChPPuiuc6qyUhUj1iEh/view?usp=sharing)
 
 ## Getting Started
 
