@@ -6,7 +6,7 @@ Catalog of my things
 
 # Description the project.
 
-> In this project, you will create a console app that will help you to keep a record of different types of things you won: books, music albums, movies, and games. Everything will be based on the UML class diagram presented below. The data will be stored in JSON files but you will also prepare a database with tables structure analogical to your program's class structure.
+> In this project, we created a console app that will help you to keep a record of different types of things you won: books, music albums, movies, and games. Everything is based on the UML class diagram presented above. The data is stored in JSON files but we also prepared a database with tables structure analogical to the program's class structure.
 
 ### Languages
 
@@ -19,9 +19,9 @@ Catalog of my things
 - Github
 - Visual Studio Code
 
-## Link to the video
+## Link to the video explanation
 
-Video link []
+[Video Link](https://www.loom.com/share/944f66c3ecc34fd88b3f1ad09c82bd7d)
 
 ## Getting Started
 
@@ -67,15 +67,15 @@ Run `git clone https://github.com/dodoburner/catalog-of-my-things.git` in your t
 
 👤 **Dorian Urem**
 
-- GitHub: [@dodoburner](https://github.com/)
-- Twitter: [@dodoburner](https://twitter.com/)
-- LinkedIn: [@dodoburner](https://www.linkedin.com/in//)
+- GitHub: [@dodoburner](https://github.com/dodoburner)
+- Twitter: [@DorianUrem](https://twitter.com/DorianUrem)
+- LinkedIn: [Dorian Urem](https://www.linkedin.com/in/dorian-urem-252baa237/)
 
 👤 **Alfred Kinyua**
 
-- GitHub: [@alfred](https://github.com/)
-- Twitter: [@alfred](https://twitter.com/)
-- LinkedIn: [@alfred](https://www.linkedin.com/in//)
+- GitHub: [@Alfred Kinyua](https://github.com/Alfred-KInyua)
+- Twitter: [@alfkinyua](https://twitter.com/alfkinyua)
+- LinkedIn: [Alfred-Kinyua](https://www.linkedin.com/in/alfred-kinyua/)
 
 ## 🤝 Contributing
 
